@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Getter // TODO: 왜 필요?
+@Getter
 public class ChallengeSaveRequestDto {
     private String title;
 
