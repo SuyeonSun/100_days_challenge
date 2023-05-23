@@ -1,5 +1,6 @@
 package com.example._days_challenge.entity;
 
+import com.example._days_challenge.ChallengeSaveRequestDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,5 +23,10 @@ public class Challenge {
     public Challenge(String title, String goal) {
         this.title = title;
         this.goal = goal;
+    }
+
+    public void update (ChallengeSaveRequestDto requestDto) {
+        this.title = requestDto.getTitle();
+        this.goal = requestDto.getGoal();
     }
 }
