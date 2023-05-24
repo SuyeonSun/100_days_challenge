@@ -1,12 +1,12 @@
 package com.example._days_challenge.entity;
 
 import com.example._days_challenge.dto.ChallengeRequestDto;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -18,6 +18,9 @@ public class Challenge {
     private String title;
 
     private String goal;
+
+    @OneToMany(mappedBy = "challenge", fetch = FetchType.LAZY)
+    private List<Plan> plans = new ArrayList<>();
 
     @Builder
     public Challenge(String title, String goal) {
