@@ -9,16 +9,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 public class PlanRequestDto {
-    private Long challengeId;
-
     private LocalDate date;
 
     private String memo;
 
-    public Plan toEntity() {
-        return Plan.builder()
-                .date(date)
-                .memo(memo)
-                .build();
-    }
 }
