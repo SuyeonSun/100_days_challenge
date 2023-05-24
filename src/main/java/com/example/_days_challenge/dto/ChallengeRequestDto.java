@@ -1,4 +1,4 @@
-package com.example._days_challenge;
+package com.example._days_challenge.dto;
 
 import com.example._days_challenge.entity.Challenge;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Getter
-public class ChallengeSaveRequestDto {
+public class ChallengeRequestDto {
     private String title;
 
     private String goal;
