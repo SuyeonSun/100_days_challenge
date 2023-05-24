@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/challenge")
 public class ChallengeController {
 
     private final ChallengeService challengeService;
 
-    @PostMapping("/")
+    @PostMapping("")
     public void save(@RequestBody ChallengeRequestDto requestDto) {
         challengeService.save(requestDto);
     }
