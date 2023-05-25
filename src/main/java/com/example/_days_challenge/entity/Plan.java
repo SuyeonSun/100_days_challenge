@@ -3,12 +3,14 @@ package com.example._days_challenge.entity;
 import com.example._days_challenge.dto.PlanRequestDto;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Plan {
     @Id @GeneratedValue
     @Column(name = "plan_id")
