@@ -20,11 +20,8 @@ public class PlanController {
         planService.save(challengeId, requestDto);
     }
 
-    // plan 조회
     @GetMapping("/{id}")
     public PlanResponseDto findById(@PathVariable Long id) {
         return planService.findById(id);
     }
-
-    // 모든 plan 조회
 }

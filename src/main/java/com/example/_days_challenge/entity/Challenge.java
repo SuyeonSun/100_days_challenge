@@ -3,6 +3,7 @@ package com.example._days_challenge.entity;
 import com.example._days_challenge.dto.ChallengeRequestDto;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Challenge {
     @Id @GeneratedValue
     @Column(name = "challenge_id")

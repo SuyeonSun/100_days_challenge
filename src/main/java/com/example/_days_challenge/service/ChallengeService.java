@@ -1,6 +1,7 @@
 package com.example._days_challenge.service;
 
 import com.example._days_challenge.dto.ChallengeRequestDto;
+import com.example._days_challenge.dto.ChallengeResponseDto;
 import com.example._days_challenge.entity.Challenge;
 import com.example._days_challenge.repository.ChallengeRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,5 +28,11 @@ public class ChallengeService {
     public void delete(Long id) {
         Challenge challenge = challengeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
         challengeRepository.delete(challenge);
+    }
+
+    @Transactional
+    public ChallengeResponseDto findById(Long id) {
+        Challenge challenge = challengeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+        return new ChallengeResponseDto(challenge);
     }
 }

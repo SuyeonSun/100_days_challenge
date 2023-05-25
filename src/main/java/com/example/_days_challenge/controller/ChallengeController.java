@@ -1,6 +1,7 @@
 package com.example._days_challenge.controller;
 
 import com.example._days_challenge.dto.ChallengeRequestDto;
+import com.example._days_challenge.dto.ChallengeResponseDto;
 import com.example._days_challenge.service.ChallengeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,4 +27,12 @@ public class ChallengeController {
     public void delete(@PathVariable Long id) {
         challengeService.delete(id);
     }
+
+    // challenge 조회
+    @GetMapping("/{id}")
+    public ChallengeResponseDto findById(@PathVariable Long id) {
+        return challengeService.findById(id);
+    }
+
+    // challengeList 조회
 }
