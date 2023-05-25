@@ -1,10 +1,13 @@
 package com.example._days_challenge.controller;
 
+import com.example._days_challenge.dto.ChallengeListResponseDto;
 import com.example._days_challenge.dto.ChallengeRequestDto;
 import com.example._days_challenge.dto.ChallengeResponseDto;
 import com.example._days_challenge.service.ChallengeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,4 +38,8 @@ public class ChallengeController {
     }
 
     // challengeList 조회
+    @GetMapping("/list")
+    public List<ChallengeListResponseDto> findList() {
+        return challengeService.findList();
+    }
 }
