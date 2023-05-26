@@ -4,6 +4,7 @@ import com.example._days_challenge.entity.Plan;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 public class PlanResponseDto {
@@ -13,9 +14,12 @@ public class PlanResponseDto {
 
     private String memo;
 
+    private List<String> tasks;
+
     public PlanResponseDto(Plan entity) {
         this.id = entity.getId();
         this.date = entity.getDate();
         this.memo = entity.getMemo();
+        this.tasks = entity.getTasks();
     }
 }
