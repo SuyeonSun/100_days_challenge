@@ -13,13 +13,24 @@ public class PlanController {
 
     private final PlanService planService;
 
+    // 등록
     @PostMapping("")
     public void save(@RequestParam Long challengeId, @RequestBody PlanRequestDto requestDto) {
         planService.save(challengeId, requestDto);
     }
 
+    // 조회
     @GetMapping("/{id}")
     public PlanResponseDto findById(@PathVariable Long id) {
         return planService.findById(id);
     }
+
+    // 삭제
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id) {
+        planService.delete(id);
+    }
+
+    // 수정
+
 }

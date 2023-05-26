@@ -27,4 +27,9 @@ public class PlanService {
         Plan plan = planRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 플랜이 없습니다."));
         return new PlanResponseDto(plan);
     }
+
+    @Transactional
+    public void delete(Long id) {
+        planRepository.deleteById(id);
+    }
 }
