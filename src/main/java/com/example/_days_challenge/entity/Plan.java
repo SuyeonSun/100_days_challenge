@@ -44,4 +44,10 @@ public class Plan {
                 .tasks(requestDto.getTasks())
                 .build();
     }
+
+    public void update(PlanRequestDto requestDto) {
+        this.date = requestDto.getDate();
+        this.memo = requestDto.getMemo();
+        this.tasks = requestDto.getTasks();
+    }
 }

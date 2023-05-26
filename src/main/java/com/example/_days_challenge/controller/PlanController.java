@@ -26,11 +26,14 @@ public class PlanController {
     }
 
     // 삭제
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         planService.delete(id);
     }
 
     // 수정
-
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id, @RequestBody PlanRequestDto requestDto) {
+        planService.update(id, requestDto);
+    }
 }

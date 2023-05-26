@@ -32,4 +32,10 @@ public class PlanService {
     public void delete(Long id) {
         planRepository.deleteById(id);
     }
+
+    @Transactional
+    public void update(Long id, PlanRequestDto requestDto) {
+        Plan plan = planRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+        plan.update(requestDto);
+    }
 }
