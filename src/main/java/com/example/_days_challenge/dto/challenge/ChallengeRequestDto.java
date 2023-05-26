@@ -1,4 +1,4 @@
-package com.example._days_challenge.dto;
+package com.example._days_challenge.dto.challenge;
 
 import com.example._days_challenge.entity.Challenge;
 import lombok.Getter;

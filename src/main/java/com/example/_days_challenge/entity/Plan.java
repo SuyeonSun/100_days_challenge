@@ -1,6 +1,6 @@
 package com.example._days_challenge.entity;
 
-import com.example._days_challenge.dto.PlanRequestDto;
+import com.example._days_challenge.dto.plan.PlanRequestDto;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +20,6 @@ public class Plan {
 
     private String memo;
 
-    // task
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "challenge_id")
     private Challenge challenge;

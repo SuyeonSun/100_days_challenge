@@ -1,8 +1,8 @@
 package com.example._days_challenge.controller;
 
-import com.example._days_challenge.dto.ChallengeListResponseDto;
-import com.example._days_challenge.dto.ChallengeRequestDto;
-import com.example._days_challenge.dto.ChallengeResponseDto;
+import com.example._days_challenge.dto.challenge.ChallengeListResponseDto;
+import com.example._days_challenge.dto.challenge.ChallengeRequestDto;
+import com.example._days_challenge.dto.challenge.ChallengeResponseDto;
 import com.example._days_challenge.service.ChallengeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

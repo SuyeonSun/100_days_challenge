@@ -1,7 +1,7 @@
 package com.example._days_challenge.service;
 
-import com.example._days_challenge.dto.PlanRequestDto;
-import com.example._days_challenge.dto.PlanResponseDto;
+import com.example._days_challenge.dto.plan.PlanRequestDto;
+import com.example._days_challenge.dto.plan.PlanResponseDto;
 import com.example._days_challenge.entity.Challenge;
 import com.example._days_challenge.entity.Plan;
 import com.example._days_challenge.repository.ChallengeRepository;

@@ -1,6 +1,6 @@
 package com.example._days_challenge.entity;
 
-import com.example._days_challenge.dto.ChallengeRequestDto;
+import com.example._days_challenge.dto.challenge.ChallengeRequestDto;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
