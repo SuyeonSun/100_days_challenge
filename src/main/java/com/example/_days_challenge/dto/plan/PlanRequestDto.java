@@ -1,5 +1,6 @@
 package com.example._days_challenge.dto.plan;
 
+import com.example._days_challenge.entity.Task;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,5 +14,5 @@ public class PlanRequestDto {
 
     private String memo;
 
-    private List<String> tasks;
+    private List<Task> tasks;
 }

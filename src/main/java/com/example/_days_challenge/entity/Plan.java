@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,19 +22,18 @@ public class Plan {
 
     private String memo;
 
-    @ElementCollection
-    private List<String> tasks;
+    @OneToMany(mappedBy = "plan", fetch = FetchType.LAZY)
+    private List<Task> tasks = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "challenge_id")
     private Challenge challenge;
 
     @Builder
-    public Plan(LocalDate date, String memo, List<String> tasks, Challenge challenge) {
+    public Plan(Challenge challenge, LocalDate date, String memo) {
         this.challenge = challenge;
         this.date = date;
         this.memo = memo;
-        this.tasks = tasks;
     }
 
     public static Plan toEntity(Challenge challenge, PlanRequestDto requestDto) {
@@ -41,13 +41,11 @@ public class Plan {
                 .challenge(challenge)
                 .date(requestDto.getDate())
                 .memo(requestDto.getMemo())
-                .tasks(requestDto.getTasks())
                 .build();
     }
 
     public void update(PlanRequestDto requestDto) {
         this.date = requestDto.getDate();
         this.memo = requestDto.getMemo();
-        this.tasks = requestDto.getTasks();
     }
 }

@@ -1,6 +1,7 @@
 package com.example._days_challenge.dto.plan;
 
 import com.example._days_challenge.entity.Plan;
+import com.example._days_challenge.entity.Task;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -14,7 +15,7 @@ public class PlanResponseDto {
 
     private String memo;
 
-    private List<String> tasks;
+    private List<Task> tasks;
 
     public PlanResponseDto(Plan entity) {
         this.id = entity.getId();

@@ -14,9 +14,9 @@ public class PlanController {
     private final PlanService planService;
 
     // 등록
-    @PostMapping("")
-    public void save(@RequestParam Long challengeId, @RequestBody PlanRequestDto requestDto) {
-        planService.save(challengeId, requestDto);
+    @PostMapping("/{id}")
+    public void save(@RequestParam Long challengeId, @PathVariable Long id, @RequestBody PlanRequestDto requestDto) {
+        planService.save(challengeId, id, requestDto);
     }
 
     // 조회
