@@ -14,9 +14,9 @@ public class PlanController {
     private final PlanService planService;
 
     // 등록
-    @PostMapping("/{id}")
-    public void save(@RequestParam Long challengeId, @PathVariable Long id, @RequestBody PlanRequestDto requestDto) {
-        planService.save(challengeId, id, requestDto);
+    @PostMapping("")
+    public void save(@RequestParam Long challengeId, @RequestBody PlanRequestDto requestDto) {
+        planService.save(challengeId, requestDto);
     }
 
     // 조회
@@ -25,15 +25,15 @@ public class PlanController {
         return planService.findById(id);
     }
 
-    // 삭제
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        planService.delete(id);
-    }
-
     // 수정
     @PutMapping("/{id}")
     public void update(@PathVariable Long id, @RequestBody PlanRequestDto requestDto) {
         planService.update(id, requestDto);
+    }
+
+    // 삭제
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        planService.delete(id);
     }
 }
