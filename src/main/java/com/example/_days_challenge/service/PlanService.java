@@ -45,5 +45,10 @@ public class PlanService {
     public void update(Long id, PlanRequestDto requestDto) {
         Plan plan = planRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
         plan.update(requestDto);
+
+        for (Task requestedTask : requestDto.getTasks()) {
+            Task task = taskRepository.findById(requestedTask.getId()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+            task.update(requestedTask);
+        }
     }
 }

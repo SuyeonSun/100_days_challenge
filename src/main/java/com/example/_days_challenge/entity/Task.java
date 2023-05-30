@@ -35,4 +35,9 @@ public class Task {
                 .content(task.getContent())
                 .build();
     }
+
+    public void update(Task task) {
+        this.isDone = task.getIsDone();
+        this.content = task.getContent();
+    }
 }
