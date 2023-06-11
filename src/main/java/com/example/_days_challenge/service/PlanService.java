@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+
 @Service
 @RequiredArgsConstructor
 public class PlanService {
@@ -46,9 +48,17 @@ public class PlanService {
         Plan plan = planRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
         plan.update(requestDto);
 
+        HashMap<Long, Integer> map = new HashMap<>();
+        for (Task task : plan.getTasks()) map.put(task.getId(), 0);
         for (Task requestedTask : requestDto.getTasks()) {
             Task task = taskRepository.findById(requestedTask.getId()).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
             task.update(requestedTask);
+            map.put(requestedTask.getId(), 1);
+        }
+        for (Task task : plan.getTasks()) {
+            if (map.get(task.getId()) != 1) {
+                taskRepository.deleteById(task.getId());
+            }
         }
     }
 }
