@@ -11,10 +11,13 @@ public class ChallengeRequestDto {
 
     private String goal;
 
+    private Boolean isDone;
+
     public Challenge toEntity() {
         return Challenge.builder()
                 .title(title)
                 .goal(goal)
+                .isDone(isDone)
                 .build();
     }
 

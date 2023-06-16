@@ -11,9 +11,12 @@ public class ChallengeResponseDto {
 
     private String goal;
 
+    private Boolean isDone;
+
     public ChallengeResponseDto(Challenge entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.goal = entity.getGoal();
+        this.isDone = entity.getIsDone();
     }
 }

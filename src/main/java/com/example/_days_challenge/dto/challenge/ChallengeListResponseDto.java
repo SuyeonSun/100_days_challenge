@@ -11,9 +11,12 @@ public class ChallengeListResponseDto {
 
     private String goal;
 
+    private Boolean isDone;
+
     public ChallengeListResponseDto(Challenge challenge) {
         this.id = challenge.getId();
         this.title = challenge.getTitle();
         this.goal = challenge.getGoal();
+        this.isDone = challenge.getIsDone();
     }
 }

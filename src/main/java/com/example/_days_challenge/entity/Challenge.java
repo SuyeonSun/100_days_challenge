@@ -21,17 +21,21 @@ public class Challenge {
 
     private String goal;
 
+    private Boolean isDone;
+
     @OneToMany(mappedBy = "challenge", fetch = FetchType.LAZY)
     private List<Plan> plans = new ArrayList<>();
 
     @Builder
-    public Challenge(String title, String goal) {
+    public Challenge(String title, String goal, Boolean isDone) {
         this.title = title;
         this.goal = goal;
+        this.isDone = isDone;
     }
 
     public void update (ChallengeRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.goal = requestDto.getGoal();
+        this.isDone = requestDto.getIsDone();
     }
 }
